@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LocationUpdates</string>
+<!--
+    <string name="map_api_key">AIzaSyAYexB9ObixIZ1mQOCWXSz1Cn51rhk-RfM</string>
+-->
+
+    <string name="map_api_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDr1Udxb1rQEDaFwNOs2Rj2GtFFTSUnU7o</string>
+
+</resources>
