@@ -29,11 +29,11 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:10.2.6'
     compile 'com.google.android.gms:play-services-places:10.2.6'
     compile 'com.google.android.gms:play-services-maps:10.2.6'
-    compile  files('libs/gson-2.2.2.jar')
+  /*  compile  files('libs/gson-2.2.2.jar')
     compile  files('libs/signalr-client-sdk.jar')
     compile  files('libs/signalr-client-sdk-android.jar')
     compile 'com.github.johnkil.android-appmsg:appmsg:1.2.0'
 
-
+*/
     testCompile 'junit:junit:4.12'
 }

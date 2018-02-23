@@ -104,7 +104,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback,
     public void addMarker(GoogleMap googleMap, double lat, double lon) {
 
         if(markerCount==1){
-            animateMarker(mLastLocation,mk);
+            animateMarker(mLastLocation,mk,googleMap);
         }
 
         else if (markerCount==0){
@@ -315,13 +315,13 @@ public class Map extends FragmentActivity implements OnMapReadyCallback,
                         Toast.LENGTH_SHORT).show();
                 startLocationUpdates();
             }
-        }, 15000);
+        }, 8000);
         // Displaying the new location on UI
 
     }
 
 
-    public static void animateMarker(final Location destination, final Marker marker) {
+    public static void animateMarker(final Location destination, final Marker marker,final GoogleMap googleMap) {
         if (marker != null) {
             final LatLng startPosition = marker.getPosition();
             final LatLng endPosition = new LatLng(destination.getLatitude(), destination.getLongitude());
@@ -339,6 +339,9 @@ public class Map extends FragmentActivity implements OnMapReadyCallback,
                         LatLng newPosition = latLngInterpolator.interpolate(v, startPosition, endPosition);
                         marker.setPosition(newPosition);
                         marker.setRotation(computeRotation(v, startRotation, destination.getBearing()));
+                        float currentZoom = googleMap.getCameraPosition().zoom;
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newPosition, currentZoom));
+
                     } catch (Exception ex) {
                         // I don't care atm..
                     }
