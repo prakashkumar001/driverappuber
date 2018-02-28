@@ -61,7 +61,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback,
             // Building the GoogleApi client
 
             buildGoogleApiClient();
-            createLocationRequest();
+
             Toast.makeText(this, "Google Service Is Available!!", Toast.LENGTH_SHORT).show();
         }
 
@@ -235,6 +235,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback,
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API).build();
+
+        createLocationRequest();
     }
     //Creating location request object
     protected void createLocationRequest() {
